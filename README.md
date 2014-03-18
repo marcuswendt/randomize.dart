@@ -1,4 +1,4 @@
 randomize.dart
 ==============
 
-Random Number Generation in Dart
+Random number generation utilities for Dart.
