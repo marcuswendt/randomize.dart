@@ -1,6 +1,12 @@
 /**
- * Utility methods to help with random number generation of various sorts.
- */
+      _____  __  _____  __     ____
+     / ___/ / / /____/ / /    /    \   physics.dart
+    / ___/ /_/ /____/ / /__  /  /  /   (c) 2014, FIELD. All rights reserved.
+   /_/        /____/ /____/ /_____/    http://www.field.io
+
+   Created by Marcus Wendt on 23/03/2014
+   
+*/
 import 'dart:math' as Math;
 import 'package:vector_math/vector_math.dart';
 
