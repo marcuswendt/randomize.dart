@@ -44,3 +44,13 @@ Vector3 v3([double min=0.0, double max=1.0, Vector3 value=null]) {
 
 /** returns true/ false based on a given chance */
 bool flipCoin([double chance = 0.5]) => _rng.nextDouble() < chance;
+
+/** returns a random item from the given list */
+Object pick(List list) {
+  switch(list.length) {
+    case 0: return null;
+    case 1: return list[0];
+    default: 
+      return list[i(0, list.length)];
+  }
+}
