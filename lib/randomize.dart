@@ -29,6 +29,9 @@ set seed(int seed) {
 
 int get seed => _seed;
 
+/** Alias for seed = 0 */
+randomize() => seed = 0;
+
 /** returns a random normal between -scale, scale */
 double n([double scale=1.0]) => (_rng.nextDouble() * 2.0 - 1.0) * scale;
 
