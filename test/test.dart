@@ -9,6 +9,9 @@ main(List<String> args)
   
   i = rand.i();
   print("rand: $i");
+  
+  i = rand.i(2, 2);
+  print("rand 2-2: $i");
     
   i = rand.i(1, 0);
   print("rand 1-0: $i");

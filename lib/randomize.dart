@@ -40,6 +40,7 @@ double d([double a=0.0, double b=1.0]) {
 
 /** returns a random integer between min (inclusive) and max (exclusive) */
 int i([int a=0, int b=2]) {
+  if(a == b) return a;
   var min = Math.min(a, b);
   var max = Math.max(a, b);
   return _rng.nextInt(max - min) + min; 
