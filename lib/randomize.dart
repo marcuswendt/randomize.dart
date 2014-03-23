@@ -14,20 +14,32 @@ import 'package:vector_math/vector_math.dart';
 // static global versions
 Math.Random _rng = new Math.Random(0);
 
-seed(int seed) => _rng = new Math.Random();
+
+/**
+ * Sets the random seed used for all operations.
+ * Passing no value randomizes the seed based on the current time.
+ */
+seed([int seed=0]) {
+ if(seed == 0) {
+   _rng = new Math.Random(new DateTime.now().millisecond);
+   
+ } else {
+   _rng = new Math.Random(seed);
+ }
+}
 
 /** returns a random normal between -scale, scale */
 double n([double scale=1.0]) => (_rng.nextDouble() * 2.0 - 1.0) * scale;
 
-/** returns a random double number between min, max */
+/** returns a random double between min, max */
 double d([double a=0.0, double b=1.0]) {
   var min = Math.min(a, b);
   var max = Math.max(a, b);
   return _rng.nextDouble() * (max - min) + min;
 }
 
-/** returns a random integer number between min, max */
-int i([int a=0, int b=1]) {
+/** returns a random integer between min (inclusive) and max (exclusive) */
+int i([int a=0, int b=2]) {
   var min = Math.min(a, b);
   var max = Math.max(a, b);
   return _rng.nextInt(max - min) + min; 
