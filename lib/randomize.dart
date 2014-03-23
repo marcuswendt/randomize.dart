@@ -13,20 +13,21 @@ import 'package:vector_math/vector_math.dart';
 
 // static global versions
 Math.Random _rng = new Math.Random(0);
-
+int _seed = 0;
 
 /**
  * Sets the random seed used for all operations.
- * Passing no value randomizes the seed based on the current time.
+ * Passing seed=0 randomizes the seed based on the current time.
  */
-seed([int seed=0]) {
- if(seed == 0) {
-   _rng = new Math.Random(new DateTime.now().millisecond);
-   
- } else {
-   _rng = new Math.Random(seed);
- }
+set seed(int seed) {
+ if(seed == 0)
+   seed = new DateTime.now().millisecond;
+
+ _seed = seed;
+ _rng = new Math.Random(seed);
 }
+
+int get seed => _seed;
 
 /** returns a random normal between -scale, scale */
 double n([double scale=1.0]) => (_rng.nextDouble() * 2.0 - 1.0) * scale;

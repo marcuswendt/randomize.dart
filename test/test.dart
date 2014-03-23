@@ -5,7 +5,7 @@ main(List<String> args)
 {
   var i;
   
-  rand.seed();
+  rand.seed = 0;
   
   i = rand.i();
   print("rand: $i");
