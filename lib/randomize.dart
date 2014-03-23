@@ -20,10 +20,18 @@ seed(int seed) => _rng = new Math.Random();
 double n([double scale=1.0]) => (_rng.nextDouble() * 2.0 - 1.0) * scale;
 
 /** returns a random double number between min, max */
-double d([double min=0.0, double max=1.0]) => _rng.nextDouble() * (max - min) + min;
+double d([double a=0.0, double b=1.0]) {
+  var min = Math.min(a, b);
+  var max = Math.max(a, b);
+  return _rng.nextDouble() * (max - min) + min;
+}
 
 /** returns a random integer number between min, max */
-int i([int min=0, int max=1]) => _rng.nextInt(max - min) + min;
+int i([int a=0, int b=1]) {
+  var min = Math.min(a, b);
+  var max = Math.max(a, b);
+  return _rng.nextInt(max - min) + min; 
+}
 
 /** returns a random angle on a circle */
 double circle() => _rng.nextDouble() * Math.PI * 2.0;
