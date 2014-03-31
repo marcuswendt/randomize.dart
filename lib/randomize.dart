@@ -7,6 +7,8 @@
    Created by Marcus Wendt on 23/03/2014
    
 */
+library randomize;
+
 import 'dart:math' as Math;
 import 'package:vector_math/vector_math.dart';
 
